@@ -1,0 +1,52 @@
+---
+linters-settings:
+  errcheck:
+    exclude: .errcheck_exclude.txt
+  exhaustive:
+    default-signifies-exhaustive: true
+  gomodguard:
+    blocked:
+      modules:
+        - "github.com/tj/assert":
+            recommendations:
+              - "github.com/stretchr/testify"
+            reason: "testify provides more assertions and one is enough"
+  lll:
+    line-length: 120
+    tab-width: 4
+  misspell:
+    locale: "US"
+
+linters:
+  disable-all: true
+  enable:
+    - bodyclose
+    - deadcode
+    - dupl
+    - errcheck
+    - exhaustive
+    - exportloopref
+    - gocritic
+    - goimports
+    - gomodguard
+    - gosec
+    - gosimple
+    - govet
+    - ineffassign
+    - lll
+    - misspell
+    - nakedret
+    - prealloc
+    - staticcheck
+    - structcheck
+    - typecheck
+    - unparam
+    - unused
+    - varcheck
+    - whitespace
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - gosec

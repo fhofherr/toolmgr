@@ -1,0 +1,20 @@
+---
+repos:
+  - repo: https://github.com/fhofherr/pre-commit-hooks
+    rev: 8a2da40b96a7cf53c308820556ccea146775124f
+    hooks:
+      - id: go-mod-tidy
+      - id: revive
+      - id: shellcheck
+  - repo: https://github.com/golangci/golangci-lint
+    rev: v1.39.0
+    hooks:
+      - id: golangci-lint
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0
+    hooks:
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
